@@ -1,10 +1,8 @@
 # Tuto Spring Boot + Apache Kafka
 
-Dans ce tuto, nous allons voir comment fonctionne Kafka dans une application Spring Boot.
-
 ### Installation de Kafka sur Windows
 
-Nous allons installer kafka sur windows, crér un topic, envoyer un message dans ce topic et enfin lire les messages envoyer dans ce topic.
+Dans ce tutoriel, nous allons installer Kafka sur Windows, créer un topic, produire un message et consommer les messages associés à ce topic.
 
 ##### Télécharger Kafka
 Lien du téléchargement : https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz
@@ -34,6 +32,10 @@ Lien du téléchargement : https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0
     C:\CHEMIN_INSTALLATION> .\bin\windows\kafka-console-consumer.bat --topic topic_demo --from-beginning --bootstrap-server localhost:9092
     hello world
     topic demo
+
+### Partie 2 - Spring Boot + Kafka
+
+Voir le code source du projet.
 
 ### Schema simple de Kafka
 ```mermaid
