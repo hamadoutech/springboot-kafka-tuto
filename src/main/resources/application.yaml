@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: springboot-kafka-tuto
+  # Configuration de la connexion à Kafka
+  kafka:
+    topics:
+        orders-topic: orders-topic
+        messages-topic: messages-topic
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JacksonJsonSerializer # pour sérialiser les objets Java en JSON
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: my-group # le groupe d'identification du consommateur
+      auto-offset-reset: earliest # pour consommer les messages depuis le début du topic
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JacksonJsonDeserializer # pour désérialiser les messages JSON en objets Java
+      properties:
+        spring.json.trusted.packages: tech.hamadou.springboot.model
+
